@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Globe Genius",
   description:
     "Plan your perfect trip with Globe Genius. Discover destinations, get personalized AI itineraries, check weather and budget, save, share, and download your travel plans.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
