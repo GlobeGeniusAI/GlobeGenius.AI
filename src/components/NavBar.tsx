@@ -1,11 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-
+import Image from "next/image";
 export function NavBar() {
   return (
     <>
       <nav className="flex w-full bg-zinc-600 h-16 items-center justify-end px-10 space-x-4">
+        <Image
+          src="/Logo.png"
+          width={150}
+          height={40}
+          alt="Globe Genius Logo"
+          className="text-center"
+        />
         <Link href="/" className="text-white mr-8 font-bold hover:underline">
           Home
         </Link>
