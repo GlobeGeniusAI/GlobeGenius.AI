@@ -1,3 +1,3 @@
-export function SignIn() {
+export default function SignIn() {
   return null;
 }
