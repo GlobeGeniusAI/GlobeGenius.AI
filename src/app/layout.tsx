@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Lato } from "next/font/google";
 import "./globals.css";
-import { Header } from "../components/Header";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 const montserrat = Montserrat({
@@ -34,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} ${lato.variable} antialiased`}>
         <Header />
+        <div className="h-100 bg-white"></div>
         {children}
         <Footer />
       </body>
