@@ -8,10 +8,11 @@ import { useState } from "react";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
+
   return (
     <>
       <nav className="px-4 md:px-10 lg:px-14 flex w-full bg-zinc-600 h-16 items-center justify-between">
-        <Link href="/">
+        <Link href="/" className="cursor-pointer">
           <Logo />
         </Link>
         <div className="hidden md:flex items-center ml-14">
@@ -50,7 +51,10 @@ export function Header() {
             className="p-2 rounded-full"
             onClick={() => setIsMenuOpen(true)}
           >
-            <FontAwesomeIcon icon={faUser} className="text-white h-6 w-6" />
+            <FontAwesomeIcon
+              icon={faUser}
+              className="cursor-pointer text-white h-6 w-6"
+            />
           </button>
           <button
             className="p-2 rounded-full"
