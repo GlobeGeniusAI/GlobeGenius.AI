@@ -48,12 +48,12 @@ export function Header() {
       )}
 
       {isMenuOpen && (
-        <div className="fixed top-24 right-4 bg-white rounded-lg shadow-lg p-4 z-50 w-40">
+        <div className="fixed top-24 right-4 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-30">
           <div className="flex flex-col space-y-2">
-            <button className="text-left p-2 hover:bg-gray-100 rounded text-black font-medium">
+            <button className="text-left text-white p-2 font-white rounded text-black font-medium">
               Sign In
             </button>
-            <button className="text-left p-2 hover:bg-gray-100 rounded text-black font-medium">
+            <button className="text-left p-2 text-white rounded text-black font-medium">
               Sign Up
             </button>
           </div>

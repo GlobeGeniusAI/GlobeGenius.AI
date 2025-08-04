@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} ${lato.variable} antialiased`}>
         <Header />
-        <div className="h-150 bg-white"></div>
+        <div className="h-screen bg-white"></div>
         {children}
         <Footer />
       </body>
