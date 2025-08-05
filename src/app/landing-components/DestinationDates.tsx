@@ -20,7 +20,7 @@ export default function DestinationDates() {
                   <input
                     type="text"
                     placeholder="Destination"
-                    className="w-112 rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 font-montserrat text-black text-base placeholder-gray-500 focus:border-blue-900 focus:outline-none"
+                    className="w-116 rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 font-montserrat text-black text-base placeholder-gray-500 focus:border-blue-900 focus:outline-none"
                   />
                 </div>
               </div>
