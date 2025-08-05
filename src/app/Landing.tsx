@@ -16,7 +16,7 @@ export default function Landing() {
       <Hero />
       <DestinationDates />
 
-      <h1 className="flex justify-center mt-40 text-5xl font-bold text-[#ff6f61] font-montserrat tracking-tight">
+      <h1 className="flex justify-center mt-40 text-5xl font-semibold text-[#ff6f61] font-montserrat tracking-tight">
         Here&apos;s what we have to offer
       </h1>
 
