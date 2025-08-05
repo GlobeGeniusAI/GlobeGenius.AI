@@ -12,7 +12,7 @@ export function Header() {
   return (
     <>
       <nav className="px-4 md:px-10 lg:px-14 flex w-full bg-zinc-600 h-16 items-center justify-between">
-        <Link href="/" className="cursor-pointer">
+        <Link href="/" className="cursor-pointer mt-14">
           <Logo />
         </Link>
         <div className="hidden md:flex items-center ml-14">
