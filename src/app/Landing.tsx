@@ -6,16 +6,15 @@ import Hero from "./landing-components/Hero";
 export default function Landing() {
   return (
     <div className="min-h-screen bg-gray-50">
-
       {/* FAKE NAVBAR DELETE THIS BEFORE PR */}
       <div className="bg-gray-500 h-20"></div>
 
       <Hero />
       <DestinationDates />
 
-      <div className="text-4xl font-bold text-[#ff6f61]">
-        <h1>Heres what we Have to Offer</h1>
-      </div>
+      <h1 className="flex justify-center mt-40 text-5xl font-bold text-[#ff6f61] font-montserrat tracking-tight">
+        Here&apos;s what we have to offer
+      </h1>
     </div>
   );
 }

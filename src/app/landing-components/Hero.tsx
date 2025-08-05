@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className=" flex justify-center bg-gray-50">
+    <div className="flex justify-center bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 pt-18">
           <div className="relative flex justify-center">
             <Image
@@ -11,7 +11,6 @@ export default function Hero() {
               height={750}
               alt="plane with dashes to destination"
               priority
-              className="select-none"
             />
           </div>
 
