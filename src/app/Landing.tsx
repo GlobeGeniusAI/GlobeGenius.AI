@@ -7,6 +7,7 @@ import Hero from "./landing-components/Hero";
 import SaveFavorites from "./landing-components/SaveFavorites";
 import SearchDestinations from "./landing-components/SearchDestinations";
 import TripInsights from "./landing-components/TripInsights";
+import TrendingCards from "@/components/TrendingCards";
 
 export default function Landing() {
   return (
@@ -26,8 +27,46 @@ export default function Landing() {
       <SaveFavorites />
       <TripInsights />
 
-       <TrendingTags tags={['Beaches', 'Mountains', 'Adventure', 'Solo Travel', 'Romantic', 'Luxury']} />
-      
+      <h2 className="mt-30 ml-20 text-3xl font-semibold text-[#ff6f61] font-montserrat tracking-tight">
+        Trending Destinations
+      </h2>
+
+      {/* <TrendingCards
+        destinations={[
+          { name: "Paris", image: "/placeholder.jpg" },
+          { name: "Tokyo", image: "/placeholder.jpg" },
+          { name: "Bali", image: "/placeholder.jpg" },
+          { name: "London", image: "/placeholder.jpg" },
+          { name: "New York", image: "/placeholder.jpg" },
+          // Add more later...
+        ]}
+      /> */}
+
+<TrendingCards
+  destinations={[
+    { name: 'Paris' },
+    { name: 'Tokyo' },
+    { name: 'Bali' },
+    { name: 'London' },
+    { name: 'New York' },
+    { name: 'Rome' },
+    { name: 'Barcelona' },
+    { name: 'Sydney' },
+  ]}
+/>
+
+
+
+      <TrendingTags
+        tags={[
+          "Beaches",
+          "Mountains",
+          "Adventure",
+          "Solo Travel",
+          "Romantic",
+          "Luxury",
+        ]}
+      />
     </div>
   );
 }
