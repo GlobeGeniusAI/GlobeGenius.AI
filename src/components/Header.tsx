@@ -4,10 +4,15 @@ import { faUser, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { Logo } from "@/app/UI components/Logo";
 import { useState } from "react";
+import { useAuth } from "@/firebase/AuthContext";
+import { useRouter } from "next/router";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
+
+  const { user, logOut, loading } = useAuth();
+  const router = useRouter();
 
   return (
     <>
@@ -42,6 +47,12 @@ export function Header() {
               onClick={() => setIsMenuOpen(true)}
             >
               <FontAwesomeIcon icon={faUser} className="text-white h-6 w-6" />
+
+              {user && !loading && (
+                <span className="text-white font-montserrat hidden lg:inline text-sm">
+                  {user.displayName || "Profile"}
+                </span>
+              )}
             </button>
           </div>
         </div>
