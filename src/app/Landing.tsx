@@ -1,5 +1,6 @@
 "use client";
 
+import TrendingTags from "@/components/TrendingTags";
 import DestinationDates from "./landing-components/DestinationDates";
 import GenerateItineraries from "./landing-components/GenerateItineraries";
 import Hero from "./landing-components/Hero";
@@ -24,6 +25,8 @@ export default function Landing() {
       <GenerateItineraries />
       <SaveFavorites />
       <TripInsights />
+
+       <TrendingTags tags={['Beaches', 'Mountains', 'Adventure', 'Solo Travel', 'Romantic', 'Luxury']} />
       
     </div>
   );
