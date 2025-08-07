@@ -42,20 +42,18 @@ export default function Landing() {
         ]}
       /> */}
 
-<TrendingCards
-  destinations={[
-    { name: 'Paris' },
-    { name: 'Tokyo' },
-    { name: 'Bali' },
-    { name: 'London' },
-    { name: 'New York' },
-    { name: 'Rome' },
-    { name: 'Barcelona' },
-    { name: 'Sydney' },
-  ]}
-/>
-
-
+      <TrendingCards
+        destinations={[
+          { name: "Paris" },
+          { name: "Tokyo" },
+          { name: "Bali" },
+          { name: "London" },
+          { name: "New York" },
+          { name: "Rome" },
+          { name: "Barcelona" },
+          { name: "Sydney" },
+        ]}
+      />
 
       <TrendingTags
         tags={[
@@ -67,6 +65,13 @@ export default function Landing() {
           "Luxury",
         ]}
       />
+
+      <div className="flex flex-wrap justify-center pb-24 pt-6">
+        <button className="rounded-full border border-gray-400 px-60 py-3 text-[#000744] text-2xl font-montserrat font-medium hover:bg-gray-200 shadow-md transition transform hover:-translate-y-1 active:translate-y-0 hover:cursor-pointer">
+          Surprise Me
+        </button>
+      </div>
+
     </div>
   );
 }
