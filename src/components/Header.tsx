@@ -7,11 +7,11 @@ import { useState } from "react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <>
-      <nav className="px-4 md:px-10 lg:px-14 flex w-full bg-zinc-600 h-16 items-center justify-between">
-        <Link href="/" className="cursor-pointer mt-14">
+      <nav className="sm:px-2 md:px-10 lg:px-14 flex w-full bg-zinc-600 h-16 items-center justify-between">
+        <Link href="/" className="cursor-pointer mt-14 md:mt-0">
           <Logo />
         </Link>
         <div className="hidden md:flex items-center ml-14">
@@ -57,43 +57,43 @@ export function Header() {
           </button>
           <button
             className="p-2 rounded-full"
-            onClick={() => setIsMobileView(!isMobileView)}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <FontAwesomeIcon
-              icon={isMobileView ? faTimes : faBars}
+              icon={isMobileMenuOpen ? faTimes : faBars}
               className="h-6 w-6 text-white"
             />
           </button>
         </div>
       </nav>
-      {isMobileView && (
+      {isMobileMenuOpen && (
         <div
           className="fixed inset-0 bg-gray-500/20 z-40"
-          onClick={() => setIsMobileView(false)}
+          onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
       {/* Mobile Navigation Dropdown */}
-      {isMobileView && (
-        <div className="fixed top-20 right-2 sm:right-4 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-32 md:hidden">
+      {isMobileMenuOpen && (
+        <div className="fixed top-14 right-2 sm:right-2 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-32 md:hidden">
           <div className="flex flex-col space-y-2">
             <Link
               href="/"
               className="font-montserrat text-sm text-white font-bold hover:bg-zinc-500 p-3 rounded transition-colors"
-              onClick={() => setIsMobileView(false)}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/explore"
               className="font-montserrat text-sm text-white font-bold hover:bg-zinc-500 p-3 rounded transition-colors"
-              onClick={() => setIsMobileView(false)}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Explore
             </Link>
             <Link
               href="/about-us"
               className="font-montserrat text-sm text-white font-bold hover:bg-zinc-500 p-3 rounded transition-colors"
-              onClick={() => setIsMobileView(false)}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               About us
             </Link>
@@ -109,7 +109,7 @@ export function Header() {
       )}
 
       {isMenuOpen && (
-        <div className="fixed top-20 right-4 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-30">
+        <div className="fixed top-20 right-4 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-32">
           <div className="flex flex-col space-y-2">
             <button className="text-left text-white p-2 font-white rounded text-black font-medium">
               <Link
