@@ -22,7 +22,7 @@ export default function TrendingDestinations({ destinations }: { destinations: {
     }
   };
 
-  // 🌀 Auto-scroll (paused on hover)
+  // Auto-scroll (paused on hover)
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovering && scrollRef.current) {
@@ -33,13 +33,13 @@ export default function TrendingDestinations({ destinations }: { destinations: {
           el.scrollBy({ left: 250, behavior: 'smooth' });
         }
       }
-    }, 2000); // scroll every 4 sec
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [isHovering]);
 
   return (
-    <div className="relative mt-6 w-full max-w-6xl mx-auto overflow-hidden">
+    <div className="relative mt-6 w-full max-w-6xl mx-auto overflow-hidden cursor-pointer">
 
       {/* Carousel Track */}
       <div
@@ -53,7 +53,7 @@ export default function TrendingDestinations({ destinations }: { destinations: {
             key={index}
             className="relative min-w-[200px] h-[350px] rounded-[30px] overflow-hidden flex-shrink-0 group"
           >
-            {/* Placeholder box (swap for Image later) */}
+            {/* Placeholder box */}
             <div className="w-full h-full bg-gray-300 transition-transform duration-300 ease-in-out group-hover:scale-105" />
 
            {/* Text Overlay */}
@@ -67,14 +67,14 @@ export default function TrendingDestinations({ destinations }: { destinations: {
       {/* Arrows */}
       <button
         onClick={() => scroll('left')}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 rounded-full p-2 hover:bg-white transition"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 rounded-full p-2 hover:bg-white transition cursor-pointer"
       >
         <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
       </button>
 
       <button
         onClick={() => scroll('right')}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 rounded-full p-2 hover:bg-white transition"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 rounded-full p-2 hover:bg-white transition cursor-pointer"
       >
         <ChevronRightIcon className="h-6 w-6 text-gray-700" />
       </button>
