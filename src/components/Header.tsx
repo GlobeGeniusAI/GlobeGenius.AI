@@ -4,16 +4,10 @@ import { faUser, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { Logo } from "@/app/UI components/Logo";
 import { useState } from "react";
-import { useAuth } from "@/firebase/AuthContext";
-import { useRouter } from "next/router";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
-
-  const { user, logOut, loading } = useAuth();
-  const router = useRouter();
-
   return (
     <>
       <nav className="px-4 md:px-10 lg:px-14 flex w-full bg-zinc-600 h-16 items-center justify-between">
@@ -47,12 +41,6 @@ export function Header() {
               onClick={() => setIsMenuOpen(true)}
             >
               <FontAwesomeIcon icon={faUser} className="text-white h-6 w-6" />
-
-              {user && !loading && (
-                <span className="text-white font-montserrat hidden lg:inline text-sm">
-                  {user.displayName || "Profile"}
-                </span>
-              )}
             </button>
           </div>
         </div>
@@ -124,12 +112,20 @@ export function Header() {
         <div className="fixed top-20 right-4 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-30">
           <div className="flex flex-col space-y-2">
             <button className="text-left text-white p-2 font-white rounded text-black font-medium">
-              <Link href="sign-in" className="font-montserrat text-sm">
+              <Link
+                href="sign-in"
+                className="font-montserrat text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Sign In
               </Link>
             </button>
             <button className="text-left p-2 text-white rounded text-black font-medium">
-              <Link href="sign-up" className="font-montserrat text-sm">
+              <Link
+                href="sign-up"
+                className="font-montserrat text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Sign Up
               </Link>
             </button>
