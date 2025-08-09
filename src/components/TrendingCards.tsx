@@ -1,14 +1,15 @@
-//TODO:
-//Hook this up to dynamic API image sources.
-//Wire up routing when clicking a card.
-
-
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
-export default function TrendingDestinations({ destinations }: { destinations: { name: string }[] }) {
+type Destination = {
+  name: string;
+  image: string; // file path from /public/trending-cards or external URL
+};
+
+export default function TrendingCards({ destinations }: { destinations: Destination[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -44,7 +45,7 @@ export default function TrendingDestinations({ destinations }: { destinations: {
       {/* Carousel Track */}
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto no-scrollbar px-4 scroll-smooth"
+        className="flex gap-4 overflow-x-auto no-scrollbar px-4 scroll-smooth"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -53,10 +54,15 @@ export default function TrendingDestinations({ destinations }: { destinations: {
             key={index}
             className="relative min-w-[200px] h-[350px] rounded-[30px] overflow-hidden flex-shrink-0 group"
           >
-            {/* Placeholder box */}
-            <div className="w-full h-full bg-gray-300 transition-transform duration-300 ease-in-out group-hover:scale-105" />
+            {/* Image */}
+            <Image
+              src={destination.image}
+              alt={destination.name}
+              fill
+              className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+            />
 
-           {/* Text Overlay */}
+            {/* Text Overlay */}
             <div className="absolute bottom-6 w-full text-center text-white font-montserrat text-2xl font-semibold drop-shadow-md">
               {destination.name}
             </div>

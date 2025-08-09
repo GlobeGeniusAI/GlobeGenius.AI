@@ -19,7 +19,7 @@ export default function DestinationDates() {
                   <MagnifyingGlassIcon className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500" />
                   <input
                     type="text"
-                    placeholder="Destination"
+                    placeholder="City or Country"
                     className="w-116 rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 font-montserrat text-black text-base placeholder-gray-500 focus:border-blue-900 focus:outline-none"
                   />
                 </div>
@@ -54,7 +54,7 @@ export default function DestinationDates() {
               <div className="flex pl-12">
                 <button
                   type="submit"
-                  className="h-[48px] rounded-4xl bg-[#010a46] px-12 font-montserrat text-xl font-medium text-white shadow-md transition transform hover:-translate-y-1 hover:bg-[#0048a4] active:translate-y-0 hover:cursor-pointer"
+                  className="h-[48px] rounded-full bg-[#010a46] px-12 font-montserrat text-xl font-medium text-white shadow-md transition transform hover:-translate-y-1 hover:bg-[#0048a4] active:translate-y-0 hover:cursor-pointer"
                 >
                   Let’s go!
                 </button>

@@ -11,7 +11,8 @@ import TrendingCards from "@/components/TrendingCards";
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="max-w-full min-h-screen bg-gray-50">
+
       {/* FAKE NAVBAR DELETE THIS BEFORE PR */}
       <div className="bg-gray-500 h-20"></div>
 
@@ -31,27 +32,18 @@ export default function Landing() {
         Trending Destinations
       </h2>
 
-      {/* <TrendingCards
-        destinations={[
-          { name: "Paris", image: "/placeholder.jpg" },
-          { name: "Tokyo", image: "/placeholder.jpg" },
-          { name: "Bali", image: "/placeholder.jpg" },
-          { name: "London", image: "/placeholder.jpg" },
-          { name: "New York", image: "/placeholder.jpg" },
-          // Add more later...
-        ]}
-      /> */}
-
       <TrendingCards
         destinations={[
-          { name: "Paris" },
-          { name: "Tokyo" },
-          { name: "Bali" },
-          { name: "London" },
-          { name: "New York" },
-          { name: "Rome" },
-          { name: "Barcelona" },
-          { name: "Sydney" },
+          { name: "Paris", image: "/trending-cards/paris.jpg" },
+          { name: "Tokyo", image: "/trending-cards/tokyo.jpg"  },
+          { name: "Bali", image: "/trending-cards/bali.jpg"   },
+          { name: "London", image: "/trending-cards/london.jpg"  },
+          { name: "New York", image: "/trending-cards/new-york2.jpg"  },
+          { name: "Rome", image: "/trending-cards/rome.jpg"  },
+          { name: "Lisbon", image: "/trending-cards/lisbon.jpg"  },
+          { name: "Barcelona", image: "/trending-cards/barcelona.jpg"  },
+          { name: "Marrakesh", image: "/trending-cards/marrakesh.jpg"  },
+          { name: "Crete", image: "/trending-cards/crete.jpg"  },
         ]}
       />
 
