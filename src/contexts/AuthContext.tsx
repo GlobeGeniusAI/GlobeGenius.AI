@@ -29,7 +29,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       setLoading(false);
     });
 
-    return unsubscribe; // Return the function, don't call it
+    return unsubscribe;
   }, []);
 
   const value = {
