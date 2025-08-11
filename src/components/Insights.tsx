@@ -216,7 +216,7 @@ export default function Insights({
         <Card>
           <div className="flex items-start gap-3">
             <div className="mt-0.5">
-              <CalendarDaysIcon className="h-6 w-6 text-[#0d1b2a]" />
+              <CalendarDaysIcon className="w-6 text-[#0d1b2a]" />
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-900">
@@ -236,10 +236,10 @@ export default function Insights({
         <Card>
           <div className="flex items-start gap-3">
             <div className="mt-0.5 flex-shrink-0">
-              <CloudIcon className="h-6 w-6 text-gray-700" />
+              <CloudIcon className="w-6 text-gray-700" />
             </div>
             <div className="flex-1">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <h3 className="text-lg font-semibold text-gray-900">
                   {weather.label ?? 'Weather'}
                 </h3>
@@ -263,7 +263,7 @@ export default function Insights({
       {/* Budget */}
       <Card className="mt-6">
         <div className="flex items-start gap-3">
-          <CurrencyDollarIcon className="mt-0.5 h-6 w-6 text-[#0d1b2a]" />
+          <CurrencyDollarIcon className="mt-0.5 w-6 text-[#0d1b2a]" />
           <div className="flex-1">
             <h3 className="text-lg font-semibold text-gray-900">Budget</h3>
             <p className="mt-2 text-gray-700">{budget.summary}</p>

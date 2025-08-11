@@ -18,23 +18,26 @@ export default function SaveFavorites() {
           </div>
 
           {/* Right Image Content */}
-          <div className="flex-1 flex justify-center">
-            {/* Favorites Card */}
-            <div className="w-full max-w-md">
-              <FavoriteCard
-                title="Paris, France"
-                savedOn="2025-05-24"
-                // imageUrl={someURL} // leave undefined for the color block placeholder
-                tags={[
-                  { icon: "❤️", label: "Romantic" },
-                  { icon: "🎨", label: "Art & Museums" },
-                  { icon: "🛍️", label: "Shopping" },
-                ]}
-                onPreview={() => console.log("preview")}
-                onRemove={() => console.log("remove")}
-              />
-            </div>
-          </div>
+       
+<div className="flex-1 flex justify-center mb-20">
+  {/* Favorites Card */}
+  <div className="w-full max-w-md scale-60 md:scale-60 sm:scale-60">
+    <FavoriteCard
+      title="Paris, France"
+      savedOn="2025-05-24"
+      imageUrl="/trending-cards/paris.jpg"
+      tags={[
+        { icon: "❤️", label: "Romantic" },
+        { icon: "🎨", label: "Art & Museums" },
+        { icon: "🛍️", label: "Shopping" },
+      ]}
+      onPreview={() => console.log("preview")}
+      onRemove={() => console.log("remove")}
+    />
+  </div>
+</div>
+
+
         </div>
       </div>
     </div>

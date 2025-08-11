@@ -1,3 +1,5 @@
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+
 export default function SearchDestinations() {
   return (
     <div className="bg-[#f9f9f9] mt-4 py-4">
@@ -19,12 +21,9 @@ export default function SearchDestinations() {
           {/* Right Image Content */}
           <div className="flex-1 flex justify-center">
             {/* Replace this with your actual image component */}
-            <div className="w-full max-w-md">
-              <img
-                src="/your-image.png"
-                alt="Maps and Reviews"
-                className="rounded-xl"
-              />
+            <div className="w-full max-w-md flex justify-center">
+              <MagnifyingGlassIcon className="w-80" />
+              
             </div>
           </div>
         </div>

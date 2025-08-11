@@ -12,58 +12,76 @@ import TrendingCards from "@/components/TrendingCards";
 export default function Landing() {
   return (
     <div className="max-w-full min-h-screen bg-gray-50">
-
       {/* FAKE NAVBAR DELETE THIS BEFORE PR */}
-      <div className="bg-gray-500 h-20"></div>
+      <div className="bg-gray-500 h-20" />
 
-      <Hero />
-      <DestinationDates />
+      {/* Landing page Body */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Hero />
+        <DestinationDates />
 
-      <h1 className="flex justify-center mt-40 text-5xl font-semibold text-[#ff6f61] font-montserrat tracking-tight">
-        Here&apos;s what we have to offer
-      </h1>
+        <h1
+          className="
+            flex justify-center mt-40 font-semibold font-montserrat tracking-tight text-[#ff6f61]
+            text-3xl sm:text-5xl md:text-5xl text-center
+          "
+        >
+          Here&apos;s what we have to offer
+        </h1>
 
-      <SearchDestinations />
-      <GenerateItineraries />
-      <SaveFavorites />
-      <TripInsights />
+        <SearchDestinations />
+        <GenerateItineraries />
+        <SaveFavorites />
+        <TripInsights />
 
-      <h2 className="mt-30 ml-20 text-3xl font-semibold text-[#ff6f61] font-montserrat tracking-tight">
-        Trending Destinations
-      </h2>
+        <h2 className="mt-30 ml-20 text-3xl font-semibold text-[#ff6f61] font-montserrat tracking-tight">
+          Trending Destinations
+        </h2>
 
-      <TrendingCards
-        destinations={[
-          { name: "Paris", image: "/trending-cards/paris.jpg" },
-          { name: "Tokyo", image: "/trending-cards/tokyo.jpg"  },
-          { name: "Bali", image: "/trending-cards/bali.jpg"   },
-          { name: "London", image: "/trending-cards/london.jpg"  },
-          { name: "New York", image: "/trending-cards/new-york2.jpg"  },
-          { name: "Rome", image: "/trending-cards/rome.jpg"  },
-          { name: "Lisbon", image: "/trending-cards/lisbon.jpg"  },
-          { name: "Barcelona", image: "/trending-cards/barcelona.jpg"  },
-          { name: "Marrakesh", image: "/trending-cards/marrakesh.jpg"  },
-          { name: "Crete", image: "/trending-cards/crete.jpg"  },
-        ]}
-      />
+        <TrendingCards
+          destinations={[
+            { name: "Paris", image: "/trending-cards/paris.jpg" },
+            { name: "Tokyo", image: "/trending-cards/tokyo.jpg" },
+            { name: "Bali", image: "/trending-cards/bali.jpg" },
+            { name: "London", image: "/trending-cards/london.jpg" },
+            { name: "New York", image: "/trending-cards/new-york2.jpg" },
+            { name: "Rome", image: "/trending-cards/rome.jpg" },
+            { name: "Lisbon", image: "/trending-cards/lisbon.jpg" },
+            { name: "Barcelona", image: "/trending-cards/barcelona.jpg" },
+            { name: "Marrakesh", image: "/trending-cards/marrakesh.jpg" },
+            { name: "Crete", image: "/trending-cards/crete.jpg" },
+          ]}
+        />
 
-      <TrendingTags
-        tags={[
-          "Beaches",
-          "Mountains",
-          "Adventure",
-          "Solo Travel",
-          "Romantic",
-          "Luxury",
-        ]}
-      />
+        <TrendingTags
+          tags={[
+            "Beaches",
+            "Mountains",
+            "Adventure",
+            "Solo Travel",
+            "Romantic",
+            "Luxury",
+          ]}
+        />
 
-      <div className="flex flex-wrap justify-center pb-24 pt-4">
-        <button className="rounded-full border border-gray-400 px-60 py-3 text-[#000744] text-2xl font-montserrat font-medium hover:bg-gray-200 shadow-md transition transform hover:-translate-y-1 active:translate-y-0 hover:cursor-pointer">
-          Surprise Me
-        </button>
+        {/* Surprise Me button */}
+        <div className="flex flex-wrap justify-center pb-24 pt-4">
+          <button
+            className="
+              rounded-full border border-gray-400 
+              px-18 sm:px-20 md:px-40 lg:px-60 
+              py-2 sm:py-3 
+              text-2xl sm:text-2xl md:text-2xl 
+              font-montserrat font-medium 
+              text-[#000744] 
+              hover:bg-gray-200 shadow-md transition transform 
+              hover:-translate-y-1 active:translate-y-0 hover:cursor-pointer
+            "
+          >
+            Surprise Me
+          </button>
+        </div>
       </div>
-
     </div>
   );
 }

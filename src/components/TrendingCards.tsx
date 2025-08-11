@@ -6,38 +6,59 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
 type Destination = {
   name: string;
-  image: string; // file path from /public/trending-cards or external URL
+  image: string;
 };
 
 export default function TrendingCards({ destinations }: { destinations: Destination[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
+  const [step, setStep] = useState(250); 
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const measure = () => {
+      const firstCard = el.querySelector<HTMLElement>(':scope > div');
+      if (!firstCard) return;
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(el).columnGap || '0');
+      setStep(cardWidth + gap);
+    };
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 250;
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({
+      left: direction === 'left' ? -step : step,
+      behavior: 'smooth',
+    });
   };
 
   // Auto-scroll (paused on hover)
   useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
     const interval = setInterval(() => {
-      if (!isHovering && scrollRef.current) {
-        const el = scrollRef.current;
-        if (el.scrollLeft + el.offsetWidth >= el.scrollWidth) {
+      if (!isHovering) {
+        const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        if (atEnd) {
           el.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          el.scrollBy({ left: 250, behavior: 'smooth' });
+          el.scrollBy({ left: step, behavior: 'smooth' });
         }
       }
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [isHovering]);
+  }, [isHovering, step]);
 
   return (
     <div className="relative mt-6 w-full max-w-6xl mx-auto overflow-hidden cursor-pointer">
@@ -45,14 +66,24 @@ export default function TrendingCards({ destinations }: { destinations: Destinat
       {/* Carousel Track */}
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto no-scrollbar px-4 scroll-smooth"
+        className="
+          flex gap-4 overflow-x-auto no-scrollbar px-4 scroll-smooth
+          snap-x snap-mandatory
+        "
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
         {destinations.map((destination, index) => (
           <div
             key={index}
-            className="relative min-w-[200px] h-[350px] rounded-[30px] overflow-hidden flex-shrink-0 group"
+            className="
+              relative h-[350px] rounded-[30px] overflow-hidden flex-shrink-0 group
+              snap-start
+            "
+            style={{
+              // Exactly 5 cards visible: (100% width minus 4 gaps) / 5
+              flex: '0 0 calc((100% - 4rem) / 5)',
+            }}
           >
             {/* Image */}
             <Image
