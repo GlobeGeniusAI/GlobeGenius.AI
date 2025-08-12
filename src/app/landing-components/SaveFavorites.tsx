@@ -3,7 +3,7 @@ import FavoriteCard from "@/components/FavoriteCard";
 export default function SaveFavorites() {
   return (
     <div className="bg-[#f9f9f9] mt-4 py-4">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-md p-10 flex flex-col lg:flex-row items-center gap-10">
           {/* Left Text Content */}
           <div className="flex-1">
@@ -18,26 +18,58 @@ export default function SaveFavorites() {
           </div>
 
           {/* Right Image Content */}
-       
-<div className="flex-1 flex justify-center mb-20">
-  {/* Favorites Card */}
-  <div className="w-full max-w-md scale-60 md:scale-60 sm:scale-60">
-    <FavoriteCard
-      title="Paris, France"
-      savedOn="2025-05-24"
-      imageUrl="/trending-cards/paris.jpg"
-      tags={[
-        { icon: "❤️", label: "Romantic" },
-        { icon: "🎨", label: "Art & Museums" },
-        { icon: "🛍️", label: "Shopping" },
-      ]}
-      onPreview={() => console.log("preview")}
-      onRemove={() => console.log("remove")}
-    />
-  </div>
-</div>
 
+          <div className="flex-1 flex justify-center mt-4 mb-14">
+            {/* Favorites Card */}
 
+            <div
+              className="
+        relative mx-auto 
+        w-[315px] sm:w-[360px] lg:w-[420px]
+        group
+      "
+            >
+              {/* Back card */}
+              <div
+                className="
+          absolute pointer-events-none
+          -rotate-[-14deg] translate-x-38 translate-y-4  
+          shadow-[0_30px_70px_rgba(0,0,0,0.18)] ring-1 ring-black/10 rounded-[28px]
+        "
+              >
+                <FavoriteCard
+                  title="Tokyo, Japan"
+                  savedOn="2025-02-08"
+                  imageUrl="/trending-cards/tokyo.jpg"
+                  tags={[
+                    { icon: "❤️", label: "Romantic" },
+                    { icon: "🍽️", label: "Foodie" },
+                    { icon: "🛍️", label: "Shopping" },
+                  ]}
+                  className="w-full "
+                  onPreview={() => {}}
+                  onRemove={() => {}}
+                />
+              </div>
+
+              {/* Front card */}
+              <div className="rotate-[-6deg] -translate-x-4 translate-y-2 rounded-[28px]">
+                <FavoriteCard
+                  title="Paris, France"
+                  savedOn="2025-05-24"
+                  imageUrl="/trending-cards/paris.jpg"
+                  tags={[
+                    { icon: "❤️", label: "Romantic" },
+                    { icon: "🖼️", label: "Art & Museums" },
+                    { icon: "🛍️", label: "Shopping" },
+                  ]}
+                  className="overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.18)] ring-1 ring-black/10"
+                  onPreview={() => console.log("preview")}
+                  onRemove={() => console.log("remove")}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
