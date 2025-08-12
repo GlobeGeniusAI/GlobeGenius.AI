@@ -111,7 +111,7 @@ export function Header() {
       {isMenuOpen && (
         <div className="fixed top-20 right-4 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-32">
           <div className="flex flex-col space-y-2">
-            <button className="text-left text-white p-2 font-white rounded text-black font-medium">
+            <button className="text-left text-white p-2 hover:bg-black/20  font-white rounded text-black font-medium">
               <Link
                 href="sign-in"
                 className="font-montserrat text-sm"
@@ -120,7 +120,7 @@ export function Header() {
                 Sign In
               </Link>
             </button>
-            <button className="text-left p-2 text-white rounded text-black font-medium">
+            <button className="text-left p-2 text-white hover:bg-black/20  rounded text-black font-medium">
               <Link
                 href="sign-up"
                 className="font-montserrat text-sm"
