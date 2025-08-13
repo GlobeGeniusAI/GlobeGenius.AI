@@ -36,24 +36,29 @@ export function Header() {
           <div className="flex space-x-8 md:space-x-12 lg:space-x-16">
             <Link
               href="/"
-              className="font-montserrat text-white text-base hover:underline"
+              className="font-montserrat text-white text-base hover:underline font-bold"
             >
               Home
             </Link>
             <Link
               href="/explore"
-              className="font-montserrat text-white text-base hover:underline"
+              className="font-montserrat text-white text-base hover:underline font-bold"
             >
               Explore
             </Link>
             <Link
               href="/about-us"
-              className="font-montserrat text-white text-base hover:underline"
+              className="font-montserrat text-white text-base hover:underline font-bold"
             >
               About us
             </Link>
           </div>
-          <div className="flex items-center">
+
+          <button
+            className="p-2 rounded-full ml-2 flex items-center space-x-2"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            {" "}
             {user && (
               <Link
                 href="/favorites"
@@ -66,16 +71,11 @@ export function Header() {
                 />
               </Link>
             )}
-            <button
-              className="p-2 rounded-full ml-2 flex items-center space-x-2"
-              onClick={() => setIsMenuOpen(true)}
-            >
-              <FontAwesomeIcon
-                icon={faUser}
-                className="text-white h-6 w-6 ml-6 md:ml-8 lg:ml-12"
-              />
-            </button>
-          </div>
+            <FontAwesomeIcon
+              icon={faUser}
+              className="text-white h-6 w-6 ml-2 md:ml-4 lg:ml-6"
+            />
+          </button>
         </div>
 
         <div className="md:hidden flex items-center space-x-2">
@@ -159,12 +159,17 @@ export function Header() {
         <div className="fixed top-20 right-4 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-32">
           <div className="flex flex-col space-y-2">
             {user ? (
-              <button
-                onClick={handleSignOut}
-                className="text-left text-white p-2 hover:bg-zinc-500 rounded font-medium transition-colors"
-              >
-                <span className="font-montserrat text-sm">Sign Out</span>
-              </button>
+              <div className="flex flex-col">
+                <span className="text-left font-montserrat text-sm font-bold text-gray-200 mb-1 p-2">
+                  {user.displayName || "User"}
+                </span>
+                <button
+                  onClick={handleSignOut}
+                  className="text-left text-white p-2 hover:bg-zinc-500 rounded font-medium transition-colors"
+                >
+                  <span className="font-montserrat text-sm">Sign Out</span>
+                </button>
+              </div>
             ) : (
               <>
                 <Link

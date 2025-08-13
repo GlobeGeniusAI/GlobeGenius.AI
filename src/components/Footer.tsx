@@ -18,7 +18,7 @@ export function Footer() {
               }`}
             >
               <Link href="/" className="cursor-pointer p-4">
-                <Logo size="footer" />
+                <Logo />
               </Link>
             </div>
             <div
