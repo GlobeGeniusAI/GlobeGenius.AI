@@ -13,7 +13,7 @@ export default function Landing() {
   return (
     <div className="max-w-full min-h-screen bg-gray-50">
       {/* FAKE NAVBAR DELETE THIS BEFORE PR */}
-      <div className="bg-[#565454] h-20" />
+      
 
       {/* Landing page Body */}
       <div className="mx-auto w-full max-w-[90%] px-4 sm:px-6 lg:px-8">
