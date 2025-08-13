@@ -22,7 +22,7 @@ export default function SearchDestinations() {
           <div className="flex-1 flex justify-center">
             {/* Replace this with your actual image component */}
             <div className="w-full max-w-md flex justify-center">
-              <MagnifyingGlassIcon className="w-80" />
+              <MagnifyingGlassIcon className="w-60 text-[#565454]" />
               
             </div>
           </div>
