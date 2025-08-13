@@ -1,5 +1,5 @@
 "use client";
-import { Logo } from "@/app/UI components/Logo";
+import { Logo } from "@/components/UI components/Logo";
 import { auth } from "@/firebase/config";
 import Link from "next/link";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <>
-      <footer className="bg-zinc-600 text-white font-montserrat w-full py-4 mt-auto">
+      <footer className="bg-[#565454] text-white font-montserrat w-full py-4 mt-auto">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-2">
             <div
