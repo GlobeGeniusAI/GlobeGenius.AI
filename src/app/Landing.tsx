@@ -12,13 +12,12 @@ import TrendingCards from "@/components/TrendingCards";
 export default function Landing() {
   return (
     <div className="max-w-full min-h-screen bg-gray-50">
-      {/* FAKE NAVBAR DELETE THIS BEFORE PR */}
       
 
       {/* Landing page Body */}
-      <div className="mx-auto w-full max-w-[90%] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[90%] px-4 sm:px-6 lg:px-8 pt-10">
         <Hero />
-        <DestinationDates />
+        {/* <DestinationDates /> */}
 
         <h1
           className="
@@ -29,10 +28,10 @@ export default function Landing() {
           Here&apos;s what we have to offer
         </h1>
 
-        <SearchDestinations />
+        {/* <SearchDestinations />
         <GenerateItineraries />
         <SaveFavorites />
-        <TripInsights />
+        <TripInsights /> */}
 
         <h2 className="mt-30 ml-20 text-3xl font-semibold text-[#ff6f61] font-montserrat tracking-tight">
           Trending Destinations

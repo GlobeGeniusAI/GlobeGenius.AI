@@ -8,7 +8,7 @@ export function Logo() {
         width={650}
         height={600}
         alt="Globe Genius Logo"
-        className="object-cover mx-auto w-[90%] h-[90%] m-2"
+        className="object-cover mx-auto w-[90%] h-[90%] md:m-2"
       />
     </div>
   );
