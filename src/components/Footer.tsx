@@ -106,20 +106,24 @@ export function Footer() {
           </div>
         </div>
       </footer>
-
-      <div className="align-right">
-        <Link
-          href="/privacy-policy"
-          className="text-gray-400 text-sm hover:text-black/20 px-4"
-        >
-          Privacy Policy
-        </Link>
-        <Link
-          href="/terms-conditions"
-          className="text-gray-400 text-sm hover:text-black/20 px-4"
-        >
-          Terms & Conditions
-        </Link>
+      <div className="flex justify-between items-center px-4 py-2">
+        <div className="flex space-x-3">
+          <Link
+            href="/privacy-policy"
+            className="text-gray-400 text-sm hover:text-black/20 font-montserrat"
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            href="/terms-conditions"
+            className="text-gray-400 text-sm hover:text-black/20 font-montserrat"
+          >
+            Terms & Conditions
+          </Link>
+        </div>
+        <p className="text-gray-400 text-sm font-montserrat font-semibold">
+          2025 Globe Genius
+        </p>
       </div>
     </>
   );
