@@ -7,7 +7,7 @@ export default function SaveFavorites() {
         <div className="bg-white rounded-3xl shadow-md p-10 flex flex-col lg:flex-row items-center gap-10">
           {/* Left Text Content */}
           <div className="flex-1">
-            <h2 className="text-4xl font-semibold font-montserrat text-[#000744] mb-4">
+            <h2 className="text-4xl font-semibold font-montserrat text-[#000746] mb-4">
               Save to Favorites
             </h2>
             <p className="text-lg text-gray-700">

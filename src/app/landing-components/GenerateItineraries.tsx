@@ -5,7 +5,7 @@ export default function GenerateItineraries() {
         <div className="bg-white rounded-3xl shadow-md p-10 flex flex-col lg:flex-row-reverse items-center gap-10">
           {/* Right Text Content */}
           <div className="flex-1">
-            <h2 className="font-montserrat text-[#000744] font-semibold text-4xl mb-4">
+            <h2 className="font-montserrat text-[#000746] font-semibold text-4xl mb-4">
               AI Generated Itineraries
             </h2>
             <p className="text-lg text-gray-700">
