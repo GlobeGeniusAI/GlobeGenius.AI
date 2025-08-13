@@ -3,7 +3,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 export default function SearchDestinations() {
   return (
     <div className="bg-[#f9f9f9] mt-4 py-4">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-md p-10 flex flex-col lg:flex-row items-center gap-10">
           {/* Left Text Content */}
           <div className="flex-1">

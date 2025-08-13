@@ -61,7 +61,7 @@ export default function TrendingCards({ destinations }: { destinations: Destinat
   }, [isHovering, step]);
 
   return (
-    <div className="relative mt-6 w-full max-w-6xl mx-auto overflow-hidden cursor-pointer">
+    <div className="relative mt-6 w-full mx-auto overflow-hidden cursor-pointer">
 
       {/* Carousel Track */}
       <div
@@ -94,7 +94,7 @@ export default function TrendingCards({ destinations }: { destinations: Destinat
             />
 
             {/* Text Overlay */}
-            <div className="absolute bottom-6 w-full text-center text-white font-montserrat text-2xl font-semibold drop-shadow-md">
+            <div className="absolute bottom-4 w-full text-center text-white font-montserrat text-2xl font-semibold drop-shadow-md">
               {destination.name}
             </div>
           </div>

@@ -16,7 +16,7 @@ export default function Landing() {
       <div className="bg-gray-500 h-20" />
 
       {/* Landing page Body */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[90%] px-4 sm:px-6 lg:px-8">
         <Hero />
         <DestinationDates />
 
