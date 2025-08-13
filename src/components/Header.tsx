@@ -53,24 +53,22 @@ export function Header() {
               About us
             </Link>
           </div>
-
+          {user && (
+            <Link
+              href="/favorites"
+              className="p-2 rounded-full transition-colors"
+              title="Favorites"
+            >
+              <FontAwesomeIcon
+                icon={faHeart}
+                className="text-red-400 h-6 w-6 ml-6 md:ml-8 lg:ml-12"
+              />
+            </Link>
+          )}
           <button
             className="p-2 rounded-full ml-2 flex items-center space-x-2"
             onClick={() => setIsMenuOpen(true)}
           >
-            {" "}
-            {user && (
-              <Link
-                href="/favorites"
-                className="p-2 rounded-full transition-colors"
-                title="Favorites"
-              >
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  className="text-red-400 h-6 w-6 ml-6 md:ml-8 lg:ml-12"
-                />
-              </Link>
-            )}
             <FontAwesomeIcon
               icon={faUser}
               className="text-white h-6 w-6 ml-2 md:ml-4 lg:ml-6"
