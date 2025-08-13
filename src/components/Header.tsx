@@ -62,7 +62,7 @@ export function Header() {
               >
                 <FontAwesomeIcon
                   icon={faHeart}
-                  className="text-red-400 h-6 w-6 ml-2 md:ml-4 lg:ml-8"
+                  className="text-red-400 h-6 w-6 ml-6 md:ml-8 lg:ml-12"
                 />
               </Link>
             )}
