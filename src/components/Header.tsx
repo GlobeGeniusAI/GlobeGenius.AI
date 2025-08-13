@@ -1,17 +1,35 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faBars,
+  faTimes,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { Logo } from "@/app/UI components/Logo";
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/firebase/config";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [user] = useAuthState(auth);
+
+  const handleSignOut = async () => {
+    try {
+      await auth.signOut();
+      setIsMenuOpen(false);
+    } catch (error) {
+      console.error("Sign out error:", error);
+    }
+  };
+
   return (
     <>
       <nav className="sm:px-2 md:px-10 lg:px-14 flex w-full bg-zinc-600 h-16 items-center justify-between">
-        <Link href="/" className="cursor-pointer mt-14 md:mt-0">
+        <Link href="/" className="cursor-pointer mt-14 md:mt-14 p-4">
           <Logo />
         </Link>
         <div className="hidden md:flex items-center ml-14">
@@ -36,16 +54,43 @@ export function Header() {
             </Link>
           </div>
           <div className="flex items-center">
+            {user && (
+              <Link
+                href="/favorites"
+                className="p-2 rounded-full transition-colors"
+                title="Favorites"
+              >
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  className="text-red-400 h-6 w-6 ml-2 md:ml-4 lg:ml-8"
+                />
+              </Link>
+            )}
             <button
-              className="p-2 rounded-full ml-8 lg:ml-16 flex items-center space-x-2"
+              className="p-2 rounded-full ml-2 flex items-center space-x-2"
               onClick={() => setIsMenuOpen(true)}
             >
-              <FontAwesomeIcon icon={faUser} className="text-white h-6 w-6" />
+              <FontAwesomeIcon
+                icon={faUser}
+                className="text-white h-6 w-6 ml-6 md:ml-8 lg:ml-12"
+              />
             </button>
           </div>
         </div>
 
         <div className="md:hidden flex items-center space-x-2">
+          {user && (
+            <Link
+              href="/favorites"
+              className="p-2 rounded-full transition-colors"
+              title="Favorites"
+            >
+              <FontAwesomeIcon
+                icon={faHeart}
+                className="text-red-400 h-6 w-6"
+              />
+            </Link>
+          )}
           <button
             className="p-2 rounded-full"
             onClick={() => setIsMenuOpen(true)}
@@ -66,15 +111,17 @@ export function Header() {
           </button>
         </div>
       </nav>
+
       {isMobileMenuOpen && (
         <div
           className="fixed inset-0 bg-gray-500/20 z-40"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
+
       {/* Mobile Navigation Dropdown */}
       {isMobileMenuOpen && (
-        <div className="fixed top-14 right-2 sm:right-2 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-32 md:hidden">
+        <div className="fixed top-20 right-2 sm:right-2 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-32 md:hidden">
           <div className="flex flex-col space-y-2">
             <Link
               href="/"
@@ -111,24 +158,31 @@ export function Header() {
       {isMenuOpen && (
         <div className="fixed top-20 right-4 bg-zinc-600 rounded-lg shadow-lg p-4 z-50 w-32">
           <div className="flex flex-col space-y-2">
-            <button className="text-left text-white p-2 hover:bg-black/20  font-white rounded text-black font-medium">
-              <Link
-                href="sign-in"
-                className="font-montserrat text-sm"
-                onClick={() => setIsMenuOpen(false)}
+            {user ? (
+              <button
+                onClick={handleSignOut}
+                className="text-left text-white p-2 hover:bg-zinc-500 rounded font-medium transition-colors"
               >
-                Sign In
-              </Link>
-            </button>
-            <button className="text-left p-2 text-white hover:bg-black/20  rounded text-black font-medium">
-              <Link
-                href="sign-up"
-                className="font-montserrat text-sm"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sign Up
-              </Link>
-            </button>
+                <span className="font-montserrat text-sm">Sign Out</span>
+              </button>
+            ) : (
+              <>
+                <Link
+                  href="/sign-in"
+                  className="text-left text-white p-2 hover:bg-zinc-500 rounded font-medium block transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="font-montserrat text-sm">Sign In</span>
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className="text-left text-white p-2 hover:bg-zinc-500 rounded font-medium block transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="font-montserrat text-sm">Sign Up</span>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       )}
