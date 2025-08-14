@@ -2,7 +2,7 @@ import FavoriteCard from "@/components/FavoriteCard";
 
 export default function SaveFavorites() {
   return (
-    <div className="bg-[#f9f9f9] mt-4 py-4">
+    <div className="bg-[#f9f9f9] py-4">
       <div className="mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-md p-10 flex flex-col lg:flex-row items-center gap-10">
           {/* Left Text Content */}
@@ -15,27 +15,34 @@ export default function SaveFavorites() {
               easily build your bucket list and come back when you&apos;re ready
               to plan.
             </p>
+
+            {/* Mobile-only image */}
+            <div className="mt-6 block lg:hidden">
+              <img
+                src="/mobile-version/favorites.png"
+                alt="Save to Favorites"
+                className="w-full rounded-3xl object-cover shadow-md"
+              />
+            </div>
           </div>
 
-          {/* Right Image Content */}
-
-          <div className="flex-1 flex justify-center mt-4 mb-14">
+          {/* Right Content - Desktop */}
+          <div className="flex-1 flex justify-center mt-4 mb-14 hidden lg:flex">
             {/* Favorites Card */}
-
             <div
               className="
-        relative mx-auto 
-        w-[315px] sm:w-[360px] lg:w-[420px]
-        group
-      "
+                relative mx-auto 
+                w-[315px] sm:w-[360px] lg:w-[420px]
+                group
+              "
             >
               {/* Back card */}
               <div
                 className="
-          absolute pointer-events-none
-          -rotate-[-14deg] translate-x-38 translate-y-4  
-          shadow-[0_30px_70px_rgba(0,0,0,0.18)] ring-1 ring-black/10 rounded-[28px]
-        "
+                  absolute pointer-events-none
+                  -rotate-[-14deg] translate-x-38 translate-y-4  
+                  shadow-[0_30px_70px_rgba(0,0,0,0.18)] ring-1 ring-black/10 rounded-[28px]
+                "
               >
                 <FavoriteCard
                   title="Tokyo, Japan"
@@ -46,7 +53,7 @@ export default function SaveFavorites() {
                     { icon: "🍽️", label: "Foodie" },
                     { icon: "🛍️", label: "Shopping" },
                   ]}
-                  className="w-full "
+                  className="w-full"
                   onPreview={() => {}}
                   onRemove={() => {}}
                 />

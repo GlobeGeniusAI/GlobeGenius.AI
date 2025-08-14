@@ -16,14 +16,70 @@ export default function SearchDestinations() {
               exploring new ideas, we&apos;ll help you discover the perfect
               places to visit.
             </p>
+
+            {/* Mobile-only image */}
+            <div className="mt-6 block lg:hidden">
+              <img
+                src="/mobile-version/search.png"
+                alt="Search Destinations"
+                className="w-full rounded-3xl object-cover"
+              />
+            </div>
           </div>
 
-          {/* Right Image Content */}
-          <div className="flex-1 flex justify-center">
-            {/* Replace this with your actual image component */}
-            <div className="w-full max-w-md flex justify-center">
-              <MagnifyingGlassIcon className="w-60 text-[#565454]" />
-              
+          {/* Right Column Content - Desktop */}
+          <div className="flex-1 flex justify-center font-montserrat hidden lg:flex">
+            <div className="relative flex items-center justify-center w-full min-h-[600px]">
+              {/* Center magnifying glass icon */}
+              <MagnifyingGlassIcon className="w-40 text-[#918e8e]" />
+
+              {/* Top Left Tag - Romantic*/}
+              <div className="absolute top-34 left-18">
+                <span className="px-6 py-2 border border-gray-400 text-[#ff6f61] rounded-full text-md font-medium shadow-md">
+                  Romantic
+                </span>
+              </div>
+
+              {/* Top Right Image - Lisbon */}
+              <div className="absolute top-0 right-10">
+                <img
+                  src="/trending-cards/lisbon.jpg"
+                  alt="Destination"
+                  className="w-38 h-58 rounded-3xl object-cover border border-gray-800"
+                />
+              </div>
+
+              {/* Middle Right Tag - Adventure */}
+              <div className="absolute top-76 -right-4">
+                <span className="px-6 py-2 border border-gray-400 text-[#ff6f61] rounded-full text-md font-medium shadow-md">
+                  Adventure
+                </span>
+              </div>
+
+              {/* Bottom Left Image - Rome */}
+              <div className="absolute bottom-30 -left-2 ">
+                <img
+                  src="/trending-cards/rome.jpg"
+                  alt="Destination"
+                  className="w-38 h-58 rounded-3xl object-cover border border-gray-800"
+                />
+              </div>
+
+              {/* Bottom Center Tag - Beaches */}
+              <div className="absolute bottom-22 flex justify-center">
+                <span className="px-6 py-2 border border-gray-400 text-[#ff6f61] rounded-full text-md font-medium shadow-md">
+                  Beaches
+                </span>
+              </div>
+
+              {/* Bottom Right Image - Bali*/}
+              <div className="absolute -bottom-4 right-4 ">
+                <img
+                  src="/trending-cards/bali.jpg"
+                  alt="Destination"
+                  className="w-38 h-58 rounded-3xl object-cover border border-gray-800"
+                />
+              </div>
             </div>
           </div>
         </div>

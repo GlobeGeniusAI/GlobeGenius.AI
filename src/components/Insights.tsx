@@ -1,13 +1,12 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState } from "react";
 import {
   CalendarDaysIcon,
   CloudIcon,
   CurrencyDollarIcon,
   ChevronDownIcon,
-} from '@heroicons/react/24/outline';
-
+} from "@heroicons/react/24/outline";
 
 type WeatherPoint = { month: string; value: number }; // e.g., temp or index per month (Jan–Dec)
 
@@ -58,17 +57,17 @@ type InsightsProps = {
 
 const Card = ({
   children,
-  className = '',
+  className = "",
 }: {
   children: React.ReactNode;
   className?: string;
 }) => (
   <div
     className={[
-      'rounded-2xl bg-white shadow-sm ring-1 ring-black/5',
-      'p-6',
+      "rounded-2xl bg-white shadow-sm ring-1 ring-black/5",
+      "p-6",
       className,
-    ].join(' ')}
+    ].join(" ")}
   >
     {children}
   </div>
@@ -90,9 +89,9 @@ function MiniSparkline({ points }: { points: WeatherPoint[] }) {
       .map((p, i) => {
         const x = i * step;
         const y = height - norm(p.value) * height;
-        return `${i === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`;
+        return `${i === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`;
       })
-      .join(' ');
+      .join(" ");
 
     return { d: path };
   }, [points]);
@@ -108,21 +107,20 @@ function MiniSparkline({ points }: { points: WeatherPoint[] }) {
 
 function CurrencyConverter({
   defaultAmount = 1,
-  base = 'USD',
-  target = 'JPY',
+  base = "USD",
+  target = "JPY",
   rate = null,
   options,
   onUpdateRequest,
-}: NonNullable<InsightsProps['currency']>) {
-  const currencyOptions =
-    options ?? ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD'];
+}: NonNullable<InsightsProps["currency"]>) {
+  const currencyOptions = options ?? ["USD", "EUR", "GBP", "JPY", "CAD", "AUD"];
 
   const [amount, setAmount] = useState<number>(defaultAmount);
   const [from, setFrom] = useState(base);
   const [to, setTo] = useState(target);
 
   const converted =
-    rate && !Number.isNaN(amount) ? (amount * rate).toLocaleString() : '—';
+    rate && !Number.isNaN(amount) ? (amount * rate).toLocaleString() : "—";
 
   return (
     <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
@@ -138,7 +136,9 @@ function CurrencyConverter({
         <Select value={from} onChange={setFrom} options={currencyOptions} />
       </div>
 
-      <div className="hidden sm:flex items-center justify-center text-gray-600">=</div>
+      <div className="hidden sm:flex items-center justify-center text-gray-600">
+        =
+      </div>
 
       <div className="flex items-center gap-2">
         <input
@@ -197,14 +197,14 @@ export default function Insights({
   weather,
   budget,
   currency,
-  className = '',
+  className = "",
 }: InsightsProps) {
   return (
     <section
       className={[
-        'rounded-xl border-[3px] border-[#0d1b2a] bg-[#f6f8fb] font-montserrat px-6 py-10 sm:px-10',
+        "rounded-xl border-[3px] border-[#0d1b2a] bg-[#f6f8fb] font-montserrat px-6 py-10 sm:px-10",
         className,
-      ].join(' ')}
+      ].join(" ")}
       aria-label="Destination insights"
     >
       <h2 className="text-center text-4xl sm:text-5xl font-semibold text-[#ff6f61]">
@@ -216,43 +216,43 @@ export default function Insights({
         <Card>
           <div className="flex items-start gap-3">
             <div className="mt-0.5">
-              <CalendarDaysIcon className="w-6 text-[#0d1b2a]" />
+              <CalendarDaysIcon className="w-6 text-[#0d1b2a] -ml-2" />
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-900">
                 Best Time to Visit
               </h3>
-              <p className="mt-3 text-lg font-semibold text-[#0d1b2a]">
+              <p className="mt-3 -ml-6 text-xl font-semibold text-[#0d1b2a]">
                 {bestTime.range}
               </p>
-              <p className="mt-2 text-gray-700">
-                {bestTime.summary}
-              </p>
+              <p className="mt-2 -ml-6 text-gray-700">{bestTime.summary}</p>
             </div>
           </div>
         </Card>
 
-{/* Weather */}
+        {/* Weather */}
         <Card>
           <div className="flex items-start gap-3">
             <div className="mt-0.5 flex-shrink-0">
-              <CloudIcon className="w-6 text-gray-700" />
+              <CloudIcon className="w-6 text-gray-700 -ml-2" />
             </div>
             <div className="flex-1">
               <div className="flex items-center">
                 <h3 className="text-lg font-semibold text-gray-900">
-                  {weather.label ?? 'Weather'}
+                  {weather.label ?? "Weather"}
                 </h3>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 -ml-6">
                 <MiniSparkline points={weather.series} />
               </div>
 
               {/* Month labels under chart */}
-              <div className="mt-1 flex justify-between gap-1 text-xs text-gray-600">
+              <div className="mt-1 -ml-10 flex justify-between gap-1 text-xs text-gray-600">
                 {weather.series.map((p) => (
-                  <span key={p.month}>{p.month}</span>
+                  <span key={p.month} className="whitespace-nowrap">
+                    {p.month}
+                  </span>
                 ))}
               </div>
             </div>
@@ -271,8 +271,8 @@ export default function Insights({
             {currency && (
               <CurrencyConverter
                 defaultAmount={currency.defaultAmount ?? 1}
-                base={currency.base ?? 'USD'}
-                target={currency.target ?? 'JPY'}
+                base={currency.base ?? "USD"}
+                target={currency.target ?? "JPY"}
                 rate={currency.rate ?? null}
                 options={currency.options}
                 onUpdateRequest={currency.onUpdateRequest}

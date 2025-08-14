@@ -14,7 +14,7 @@ export default function Hero() {
             priority
           />
           <Image 
-           src="/Mobile-Hero-img.svg"
+           src="/mobile-version/Mobile-Hero-img.svg"
             width={1800}
             height={750}
             alt="plane with dashes to destination"
@@ -22,7 +22,7 @@ export default function Hero() {
             priority
           />
 
-          <div className="absolute top-14 md:top-46 md:left-16 lg:top-74 left-2">
+          <div className="absolute top-14 md:top-46 md:left-16 lg:top-64 left-2">
             <h1 className="md:text-6xl lg:text-7xl text-lg font-montserrat font-bold tracking-tight text-[#000746] ">
               From destination to details
             </h1>

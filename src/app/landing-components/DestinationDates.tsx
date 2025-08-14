@@ -2,17 +2,17 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 export default function DestinationDates() {
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
              {/* search bar */}
 
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="mt-12 flex flex-wrap items-end gap-6 font-montserrat"
+              className="mt-16 flex flex-wrap items-end gap-6 font-montserrat"
             >
               {/* destination input*/}
 
               <div className="flex flex-col">
-                <label className="mb-1 ml-2 mr-3 text-gray-700 font-montserrat text-med font-medium">
+                <label className="mb-1 ml-2 mr-3 text-gray-700 font-montserrat text-xl font-medium">
                   Search Destination:
                 </label>
                 <div className="relative">
@@ -20,7 +20,7 @@ export default function DestinationDates() {
                   <input
                     type="text"
                     placeholder="City or Country"
-                    className="w-116 rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 font-montserrat text-black text-base placeholder-gray-500 focus:border-blue-900 focus:outline-none"
+                    className="w-126 rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 font-montserrat text-black text-lg placeholder-gray-500 focus:border-blue-900 focus:outline-none"
                   />
                 </div>
               </div>
@@ -28,24 +28,24 @@ export default function DestinationDates() {
               {/* from date input */}
 
               <div className="flex flex-col">
-                <label className="mb-1 ml-2 text-gray-700 font-montserrat text-med font-medium">
+                <label className="mb-1 ml-2 text-gray-700 font-montserrat text-xl font-medium">
                   From:
                 </label>
                 <input
                   type="date"
-                  className="w-44 rounded-xl border border-gray-300 bg-white py-3 px-4 font-montserrat text-base text-gray-700 focus:border-blue-900 focus:outline-none hover:cursor-pointer"
+                  className="w-48 rounded-xl border border-gray-300 bg-white py-3 px-4 font-montserrat text-lg text-gray-700 focus:border-blue-900 focus:outline-none hover:cursor-pointer"
                 />
               </div>
 
               {/* to date input*/}
 
               <div className="flex flex-col">
-                <label className="mb-1 ml-2 text-gray-700 font-montserrat text-med font-medium ">
+                <label className="mb-1 ml-2 text-gray-700 font-montserrat text-xl font-medium ">
                   To:
                 </label>
                 <input
                   type="date"
-                  className="w-44 rounded-xl border border-gray-300 bg-white py-3 px-4 font-montserrat text-base text-gray-700 focus:border-blue-900 focus:outline-none hover:cursor-pointer"
+                  className="w-48 rounded-xl border border-gray-300 bg-white py-3 px-4 font-montserrat text-lg text-gray-700 focus:border-blue-900 focus:outline-none hover:cursor-pointer"
                 />
               </div>
 
@@ -54,7 +54,7 @@ export default function DestinationDates() {
               <div className="flex pl-12">
                 <button
                   type="submit"
-                  className="h-[48px] rounded-full bg-[#010a46] px-12 font-montserrat text-xl font-medium text-white shadow-md transition transform hover:-translate-y-1 hover:bg-[#0048a4] active:translate-y-0 hover:cursor-pointer"
+                  className="py-2.5 rounded-2xl bg-[#010a46] px-12 font-montserrat text-2xl font-medium text-white shadow-md transition transform hover:-translate-y-1 hover:bg-[#0048a4] active:translate-y-0 hover:cursor-pointer"
                 >
                   Let’s go!
                 </button>
@@ -63,3 +63,4 @@ export default function DestinationDates() {
         </div>
     )
 }
+

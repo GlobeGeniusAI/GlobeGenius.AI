@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function TrendingTags({ tags }: { tags: string[] }) {
   return (
-    <div className="flex flex-wrap justify-center gap-6 pb-18 pt-18 w-full max-w-6xl mx-auto">
+    <div className="flex flex-wrap justify-center gap-6 pb-18 pt-18 w-full mx-auto">
       {tags.map((tag) => (
         <Link
           key={tag}
@@ -15,3 +15,4 @@ export default function TrendingTags({ tags }: { tags: string[] }) {
     </div>
   );
 }
+

@@ -1,7 +1,7 @@
 export default function GenerateItineraries() {
   return (
     <div className="bg-[#f9f9f9] py-4">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-md p-10 flex flex-col lg:flex-row-reverse items-center gap-10">
           {/* Right Text Content */}
           <div className="flex-1">
