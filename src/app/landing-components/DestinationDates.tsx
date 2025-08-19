@@ -54,7 +54,7 @@ export default function DestinationDates() {
               <div className="flex pl-12">
                 <button
                   type="submit"
-                  className="py-2.5 rounded-2xl bg-[#010a46] px-12 font-montserrat text-2xl font-medium text-white shadow-md transition transform hover:-translate-y-1 hover:bg-[#0048a4] active:translate-y-0 hover:cursor-pointer"
+                  className="py-2.5 rounded-2xl bg-[#010a46] px-12 font-montserrat text-2xl font-medium text-white shadow-md transition transform hover:-translate-y-1 hover:bg-[#000759] active:translate-y-0 hover:cursor-pointer"
                 >
                   Let’s go!
                 </button>

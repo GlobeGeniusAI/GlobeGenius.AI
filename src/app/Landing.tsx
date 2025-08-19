@@ -72,7 +72,7 @@ export default function Landing() {
               py-2 sm:py-3 
               text-2xl sm:text-2xl md:text-2xl 
               font-montserrat font-medium 
-              hover:bg-[#0048a4] 
+              hover:bg-[#000759] 
              shadow-md transition transform 
               hover:-translate-y-1 active:translate-y-0 hover:cursor-pointer
             "

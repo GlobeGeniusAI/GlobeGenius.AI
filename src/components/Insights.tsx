@@ -153,7 +153,7 @@ function CurrencyConverter({
         <button
           type="button"
           onClick={() => onUpdateRequest?.(from, to)}
-          className="mt-3 ml-66 inline-flex items-center rounded-2xl bg-[#0d1b2a] px-5 py-2.5 text-white font-semibold"
+          className="mt-3 ml-66 inline-flex items-center rounded-2xl bg-[#010a46] px-5 py-2.5 text-white font-semibold"
         >
           Update Rates
         </button>
