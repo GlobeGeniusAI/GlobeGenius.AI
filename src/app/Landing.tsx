@@ -1,13 +1,13 @@
 "use client";
 
+import Hero from "../components/landing-components/Hero";
+import DestinationDates from "../components/landing-components/DestinationDates";
+import SearchDestinations from "../components/landing-components/SearchDestinations";
+import GenerateItineraries from "../components/landing-components/GenerateItineraries";
+import SaveFavorites from "../components/landing-components/SaveFavorites";
+import TripInsights from "../components/landing-components/TripInsights";
+import TrendingCards from "@/components/landing-components/TrendingCards";
 import TrendingTags from "@/components/TrendingTags";
-import DestinationDates from "./landing-components/DestinationDates";
-import GenerateItineraries from "./landing-components/GenerateItineraries";
-import Hero from "./landing-components/Hero";
-import SaveFavorites from "./landing-components/SaveFavorites";
-import SearchDestinations from "./landing-components/SearchDestinations";
-import TripInsights from "./landing-components/TripInsights";
-import TrendingCards from "@/components/TrendingCards";
 
 export default function Landing() {
   return (

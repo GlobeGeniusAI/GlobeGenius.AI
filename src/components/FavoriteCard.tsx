@@ -1,21 +1,17 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useMemo } from 'react';
-
-type Tag = {
-  icon?: string;        // e.g. "❤️"
-  label: string;        // e.g. "Romantic"
-};
+import Image from "next/image";
+import { useMemo } from "react";
+import Tags, { type Tag } from "./Tags";
 
 type FavoriteCardProps = {
-  title: string;               // e.g. "Paris, France"
-  tags: Tag[];                 // in display order
-  savedOn: Date | string;      // date saved
-  imageUrl?: string | null;    // if missing, we show a color block
+  title: string; // e.g. "Paris, France"
+  tags: Tag[]; // in display order
+  savedOn: Date | string; // date saved
+  imageUrl?: string | null; // if missing, we show a color block
   onPreview?: () => void;
   onRemove?: () => void;
-  className?: string;          // optional wrapper overrides
+  className?: string; // optional wrapper overrides
 };
 
 export default function FavoriteCard({
@@ -25,14 +21,14 @@ export default function FavoriteCard({
   imageUrl,
   onPreview,
   onRemove,
-  className = '',
+  className = "",
 }: FavoriteCardProps) {
   const savedText = useMemo(() => {
-    const d = typeof savedOn === 'string' ? new Date(savedOn) : savedOn;
+    const d = typeof savedOn === "string" ? new Date(savedOn) : savedOn;
     return `Saved on ${d.toLocaleDateString(undefined, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     })}`;
   }, [savedOn]);
 
@@ -63,17 +59,7 @@ export default function FavoriteCard({
         </h3>
 
         {/* Tags */}
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {tags.map((t, i) => (
-            <div
-              key={`${t.label}-${i}`}
-              className="inline-flex items-center rounded-lg px-2 py-1 text-[11px] font-medium bg-gray-100 text-gray-400"
-            >
-              {t.icon && <span className="mr-1">{t.icon}</span>}
-              <span>{t.label}</span>
-            </div>
-          ))}
-        </div>
+        <Tags tags={tags} />
 
         {/* Saved on */}
         <p className="mt-4 text-[14px] font-medium text-black">{savedText}</p>

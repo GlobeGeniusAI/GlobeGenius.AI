@@ -1,4 +1,5 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import DestinationCard from "../../components/DestinationCard";
 
 export default function SearchDestinations() {
   return (
@@ -42,10 +43,10 @@ export default function SearchDestinations() {
 
               {/* Top Right Image - Lisbon */}
               <div className="absolute top-0 right-10">
-                <img
+                <DestinationCard
                   src="/trending-cards/lisbon.jpg"
-                  alt="Destination"
-                  className="w-38 h-58 rounded-3xl object-cover border border-gray-800"
+                  alt="Lisbon"
+                  className="w-38 h-58 rounded-3xl border border-gray-800"
                 />
               </div>
 
@@ -58,10 +59,10 @@ export default function SearchDestinations() {
 
               {/* Bottom Left Image - Rome */}
               <div className="absolute bottom-30 -left-2 ">
-                <img
+                <DestinationCard
                   src="/trending-cards/rome.jpg"
-                  alt="Destination"
-                  className="w-38 h-58 rounded-3xl object-cover border border-gray-800"
+                  alt="Rome"
+                  className="w-38 h-58 rounded-3xl border border-gray-800"
                 />
               </div>
 
@@ -74,10 +75,10 @@ export default function SearchDestinations() {
 
               {/* Bottom Right Image - Bali*/}
               <div className="absolute -bottom-4 right-4 ">
-                <img
+                <DestinationCard
                   src="/trending-cards/bali.jpg"
-                  alt="Destination"
-                  className="w-38 h-58 rounded-3xl object-cover border border-gray-800"
+                  alt="Bali"
+                  className="w-38 h-58 rounded-3xl border border-gray-800"
                 />
               </div>
             </div>
